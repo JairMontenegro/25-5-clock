@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import Timer from "./components/timer";
+import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [breakLength, setBreakLenght] = useState(5);
+  const [session, setSession] = useState(25);
+  const [timer, setTimer] = useState(25.0);
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container">
+        <Timer
+          idLabel="break-label"
+          idLength="break-length"
+          idDecrement="break-decrement"
+          idIncrement="break-increment"
+          nameTimer="BREAK LENGTH"
+          length={breakLength}
+        />
+
+        <Timer
+          idLabel="session-label"
+          idLength="session-length"
+          idDecrement="session-decrement"
+          idIncrement="session-increment"
+          nameTimer="SESSION LENGHT"
+          length={session}
+        />
+
+        <div id="timer-label">SESSION</div>
+        <div id="timer-left">{timer}</div>
+        <button id="start_stop">start/stop</button>
+        <button id="reset">reset</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
