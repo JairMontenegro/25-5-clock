@@ -5,7 +5,18 @@ import "./App.scss";
 function App() {
   const [breakLength, setBreakLenght] = useState(5);
   const [session, setSession] = useState(25);
-  const [timer, setTimer] = useState(25.0);
+
+  const timerLeft = () => {
+    console.log("hello world");
+  };
+
+  const handleStartStop = () => {
+    console.log("Hello start stop");
+  };
+
+  const handleReset = () => {
+    console.log("hello reset ");
+  };
 
   return (
     <div className="App">
@@ -29,9 +40,13 @@ function App() {
         />
 
         <div id="timer-label">SESSION</div>
-        <div id="timer-left">{timer}</div>
-        <button id="start_stop">start/stop</button>
-        <button id="reset">reset</button>
+        <div id="timer-left">{timerLeft()}</div>
+        <button id="start_stop" onClick={handleStartStop}>
+          Start/Stop
+        </button>
+        <button id="reset" onClick={handleReset}>
+          Reset
+        </button>
       </div>
     </div>
   );
