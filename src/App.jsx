@@ -19,6 +19,27 @@ function App() {
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
+  const handleBreakIncrease = () => {
+    if (breakLength < 60) {
+      setBreakLength(breakLength + 1);
+    }
+  };
+  const handleBreakDecrease = () => {
+    if (breakLength > 1) {
+      setBreakLength(breakLength - 1);
+    }
+  };
+  const handleSessionIncrease = () => {
+    if (session < 60) {
+      setSession(session + 1);
+    }
+  };
+  const handleSessionDecrease = () => {
+    if (session > 0) {
+      setSession(session - 1);
+    }
+  };
+
   const handleStartStop = () => {
     console.log("Hello start stop");
   };
@@ -39,6 +60,8 @@ function App() {
           idIncrement="break-increment"
           nameTimer="BREAK LENGTH"
           length={breakLength}
+          onHandleDecrease={handleBreakDecrease}
+          onHandleIncrease={handleBreakIncrease}
         />
 
         <Timer
@@ -48,10 +71,12 @@ function App() {
           idIncrement="session-increment"
           nameTimer="SESSION LENGHT"
           length={session}
+          onHandleDecrease={handleSessionDecrease}
+          onHandleIncrease={handleSessionIncrease}
         />
 
         <div id="timer-label">{type}</div>
-        <div id="timer-left">{timer()}</div>
+        <div id="time-left">{timer()}</div>
         <button id="start_stop" onClick={handleStartStop}>
           Start/Stop
         </button>
