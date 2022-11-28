@@ -5,9 +5,10 @@ import "./App.scss";
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [session, setSession] = useState(25);
-  const [play, setPlay] = useState(false);
-  const [type, setType] = useState("SESSION");
   const [timeLeft, setTimeLeft] = useState(1500);
+  const [type, setType] = useState("SESSION");
+
+  const [play, setPlay] = useState(false);
 
   const regressCounter = setTimeout(() => {
     if (timeLeft && play) {
@@ -15,7 +16,6 @@ function App() {
     }
   }, 1000);
 
-  // this block of code i can to refator to use less lines
   const handleBreakIncrease = () => {
     if (breakLength < 60) {
       setBreakLength(breakLength + 1);
@@ -38,7 +38,6 @@ function App() {
       setTimeLeft(timeLeft - 60);
     }
   };
-  // this block of code i can to refator to use less lines
 
   const handleReset = () => {
     clearTimeout(regressCounter);
@@ -65,7 +64,7 @@ function App() {
       audio.play();
     }
     if (!timeLeft && type === "BREAK") {
-      setTimeLeft(setSession * 60);
+      setTimeLeft(session * 60);
       setType("SESSION");
       audio.pause();
       audio.currentTime = 0;
@@ -100,6 +99,14 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        <h2>25 + 5 / POMODORO TECHNIQUE</h2>
+        <p>
+          The Pomodoro Technique sounds basic, but it really works. You set a
+          timer for 25 minutes, work until it's up, then take a 5-minute
+          break—and repeat the whole process three more times. After that, you
+          take a 15- to 30-minute break, depending on how you feel. That's one
+          full Pomodoro cycle.
+        </p>
         <Timer
           idLabel="break-label"
           idLength="break-length"
