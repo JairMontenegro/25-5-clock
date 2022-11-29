@@ -1,4 +1,5 @@
 import React from "react";
+import "../scss/timer.scss";
 
 const Timer = (props) => {
   const {
@@ -13,15 +14,27 @@ const Timer = (props) => {
     idIncrement,
   } = props;
   return (
-    <div>
+    <div className="handler">
       <h3 id={idLabel}>{nameTimer}</h3>
       <div id={idLength}>{length}</div>
-      <button disabled={disabled} onClick={onHandleDecrease} id={idDecrement}>
-        Decrease
-      </button>
-      <button disabled={disabled} onClick={onHandleIncrease} id={idIncrement}>
-        Increase
-      </button>
+      <div className="buttons">
+        <button
+          className="dec"
+          disabled={disabled}
+          onClick={onHandleDecrease}
+          id={idDecrement}
+        >
+          DOWN
+        </button>
+        <button
+          className="inc"
+          disabled={disabled}
+          onClick={onHandleIncrease}
+          id={idIncrement}
+        >
+          UP
+        </button>
+      </div>
     </div>
   );
 };

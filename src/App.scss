@@ -1,5 +1,103 @@
-.container{
-  display: flex;
-  flex-direction: column;
+
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+body{
+  font-family:  Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-color: hsl(0, 0%, 14%);
+  color: #ffffff;
+  padding: 2px;
+  position: relative;
 
 }
+
+.info{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 0 2rem;
+  margin: 2rem auto 0;
+  width: 850px;
+  h2{
+    text-align: center;
+    font-size: 2em;
+    padding: .3em 0;
+  }
+  p{
+    text-align: justify;
+    font-size: 1.2em;
+
+  }
+}
+
+  .container{
+    width: 850px;
+    padding:  0 2rem 0;
+    margin: 0 auto;
+    .handlers{
+    display: flex;
+    
+  }
+  .display{
+      background-color: #E4DDCE;
+      color: #0e0e10;
+      border: 5px solid #E4DDCE;
+      box-shadow: 3px 3px 8px 8px #888888;
+      border-radius: 20%;
+      margin: 0 auto;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      font-size: 1.6em;
+      #timer-label{
+        font-size: 3em;
+      }
+      #time-left{
+        font-size: 2em;
+      }
+
+      button{
+        margin:0 10px;
+        border: 5em;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        background-image: linear-gradient(45deg, #4568dc, #D1A7D2);
+        padding: 0.7em 2em;
+        border-radius: 65px;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+        -webkit-transition: box-shadow 0.25s;
+        transition: box-shadow 0.25s;
+        color: white;
+            &text {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(45deg, #4568dc, #D1A7D2);
+            }
+        &::after{
+            content: "";
+                border-radius: 18px;
+                position: absolute;
+                margin: 4px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: -1;
+                background: #0e0e10;
+            };
+      }
+        button:hover{
+          background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }   
+      
+      button:hover .text{
+          background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+      }
+    }
+  }
