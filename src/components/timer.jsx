@@ -18,20 +18,10 @@ const Timer = (props) => {
       <h3 id={idLabel}>{nameTimer}</h3>
       <div id={idLength}>{length}</div>
       <div className="buttons">
-        <button
-          className="dec"
-          disabled={disabled}
-          onClick={onHandleDecrease}
-          id={idDecrement}
-        >
+        <button disabled={disabled} onClick={onHandleDecrease} id={idDecrement}>
           DOWN
         </button>
-        <button
-          className="inc"
-          disabled={disabled}
-          onClick={onHandleIncrease}
-          id={idIncrement}
-        >
+        <button disabled={disabled} onClick={onHandleIncrease} id={idIncrement}>
           UP
         </button>
       </div>
