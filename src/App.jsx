@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Timer from "./components/timer";
 import "./App.scss";
 import Footer from "./components/footer";
+import logo from "./img/logo.png";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
@@ -97,6 +98,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className="logoContainer">
+        <a
+          target="_blank"
+          href="https://jairmontenegro.github.io/personal-portfolio-/"
+        >
+          <img src={logo}></img>
+        </a>
+      </div>
       <div className="info">
         <h2>25 + 5 / POMODORO TECHNIQUE</h2>
         <p>

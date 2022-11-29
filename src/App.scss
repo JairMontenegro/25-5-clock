@@ -1,20 +1,29 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-
 body{
   font-family:  Inter, Avenir, Helvetica, Arial, sans-serif;
   background-color: hsl(0, 0%, 14%);
   color: #ffffff;
-  padding: 2px;
-  position: relative;
+  display:flex;
+  flex-direction: column;
 
 }
-
+.logoContainer{
+  width: 100%;
+  position: relative;
+  
+  img{
+    width: 300px;
+    position: fixed;
+    right: 0;
+    top: 0
+  
+  }
+}
 .info{
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem 0 2rem;
-  margin: 2rem auto 0;
+  padding: 3rem 2rem  ;
+  margin: 0 auto 0;
   width: 850px;
   h2{
     text-align: center;
@@ -51,6 +60,7 @@ body{
       padding: 1rem;
       font-size: 1.6em;
       #timer-label{
+        font-weight: 800;
         font-size: 3em;
       }
       #time-left{
